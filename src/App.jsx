@@ -8,14 +8,19 @@ import {
 import Home from "./pagesh/Home";
 import Naver from "./pagesh/Naver";
 import Routelayout from "./components/Routelayout";
+import About from "./pagesh/About";
+import HadePage from "./pagesh/HadePage";
 function App() {
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route  path="/" element={<Routelayout/>}>
-     <Route path="/" element={<Home/>}/>
+  <Route>
+        <Route  path="/" element={<Routelayout/>}>
+     <Route path="/" element={<HadePage/>}/>
+     
       </Route>
      
+  </Route>
 
     )
   );

@@ -11,6 +11,24 @@ import shape from '../assets/shape.png'
 import axios from 'axios';
 import { RiListSettingsFill } from "react-icons/ri";
 
+import "slick-carousel/slick/slick.css";
+import Slider from "react-slick";
+import PrevArros from '../components/PrevArrows'
+import NextArow from '../components/NextArow'
+
+var settings = {
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  nextArrow: <PrevArros />,
+  prevArrow: <NextArow />,
+
+  
+
+};
+
 const Home = () => {
   let [all, setAll] = useState([])
   useEffect(() => {
@@ -20,11 +38,17 @@ const Home = () => {
     }
     all()
   })
+  
   return (
     <>
       <div className="bg-[#F2F6F7] relative">
+
         <Image className={'absolute'} src={shape} alt={shape.png} />
         <Container>
+
+
+        <Slider {...settings} >
+          <div className="">
           <Flex className={'items-center gap-2 pt-[235px]'}>
             <FaHome className='text-[18px] text-orange-600' />
             <SubHadding text={'Real Estate Agency'} />
@@ -36,7 +60,27 @@ const Home = () => {
             <Button className={'px-6 py-4  rounded-sm bg-orange-600 text-white font-semibold'} text={'View Properties'} />
             <FaCirclePlay className='text-[60px]  text-orange-400' />
           </Flex>
-          <Flex className={'gap-3 items-center w-[1170px] bg-white py-6 px-5 absolute bottom-[-50px] '}>
+          </div>
+          <div className="">
+          <Flex className={'items-center gap-2 pt-[235px]'}>
+            <FaHome className='text-[18px] text-orange-600' />
+            <SubHadding text={'Real Estate Agency'} />
+          </Flex>
+          <Hadding className={'text-6xl font-bold  pt-9 pb-6'} text={'Find Your #Dream#'} />
+          <Hadding className={'text-6xl font-bold pb-7'} text={'House #By# Us'} />
+          <SubHadding className={'text[#5C727D] text-base'} text={"Lorem ipsum dolor sit amet, consectetur adipisicing"} />
+          <Flex className={'pt-6 gap-10 items-center pb-[200px]'}>
+            <Button className={'px-6 py-4  rounded-sm bg-orange-600 text-white font-semibold'} text={'View Properties'} />
+            <FaCirclePlay className='text-[60px]  text-orange-400' />
+          </Flex>
+          </div>
+          
+         
+          </Slider>
+       
+
+
+          <Flex className={'gap-3 items-center w-[1170px] bg-white shadow-lg py-6 px-5 absolute bottom-[-50px] '}>
               <select className='w-[266px] py-2 px-2 border-2 hover:border-orange-600' >
                 {all.map((item) =>
                   <option>
