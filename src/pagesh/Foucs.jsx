@@ -3,6 +3,7 @@ import Container from '../components/Container'
 import Flex from '../components/Flex'
 import iconone from '../assets/icon (3).png'
 import icontow from '../assets/icon (2).png'
+import shap from '../assets/shape.png'
 import iconthree from '../assets/icon (1).png'
 import Image from '../components/Image'
 import Button from '../components/Button'
@@ -10,7 +11,8 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 const Foucs = () => {
     return (
-        <div className='bg-[#F8F7FC] '>
+        <div className='bg-[#F8F7FC] relative '>
+            <Image className={'absolute'} src={shap} alt={shap.png}/>
             <Container className={'py-[100px]'}>
                 <div className=" text-center pb-12 ">
                     <h2 className='px-7 py-2 text-base rounded-full font-bold bg-[#FFF3F1] text-orange-600 inline-block '> Our Services</h2>
